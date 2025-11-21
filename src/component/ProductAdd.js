@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProductAdd() {
+    const navigate  = useNavigate();
     let nameRef = useRef("");
     let [price, setPrice] = useState("");
     let priceRef = useRef("");
@@ -47,6 +49,9 @@ function ProductAdd() {
         <div>
             <button onClick={fnNameRef}>focus</button>
             <button onClick={fnAdd}>저장</button>
+            <button onClick={()=>{
+                navigate("/product/list");
+            }}>돌아가기</button>
         </div>
     </>
 }
